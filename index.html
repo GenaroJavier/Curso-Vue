@@ -11,57 +11,32 @@
 </head>
 <body>
 
-    <div id="app">
-        <div class="container mt-5">
-            <div class="row">
-              <div class="col">
-                <div class="card">
-                    <img class="card-img-top" src="holder.js/100x180/" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Imagen 1</h4>
-                        <label>ver</label>
-                        <input type="checkbox" id="check_1" v-model="check_1">
-                        <br>
-        
-                        <img v-if="check_1 == true" v-bind:src="img_1" alt="">
-                    </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="col">
-                    <div class="card">
-                        <img class="card-img-top" src="holder.js/100x180/" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">Imagen 2</h4>
-                            <label>ver</label>
-                            <input type="checkbox" id="check_2" v-model="check_2">
-                            <br>
-            
-                            <img v-if="check_2 == true" v-bind:src="img_2" alt="">
-                        </div>
-                    </div>
-                  </div>
-              </div>
-              <div class="col">
-                <div class="col">
-                    <div class="card">
-                        <img class="card-img-top" src="holder.js/100x180/" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">Imagen 3</h4>
-                            <label>ver</label>
-                            <input type="checkbox" id="check_3" v-model="check_3">
-                            <br>
-            
-                            <img v-if="check_3 == true" v-bind:src="img_3" alt="">
-                        </div>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
+    <div id="app" class="mt-3">
+       <ul>
+           <label>Arreglo normal</label>
+           <li v-for="(animal, i) in animales" v-bind:key="animal">
+                {{i}} - {{animal}}
+           </li>
+        <br>
+           <label>Arreglo de objetos</label>
+           <li v-for="(persona, i) in personas" v-bind:key="persona.nombre">
+               {{i}} - Mi nombre es: <b>{{persona.nombre}}</b> <b>{{persona.apellido}}</b> tengo <b>{{persona.edad}}</b> años y soy un <b>{{persona.puesto}}</b>
+           </li>
+       </ul>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
+
+
+<!--
+    La propiedad 
+    
+        v-bind:key="variable"
+
+        Nos permite identificar unívoca a cada uno de estos elementos. 
+
+        unívoca: Que siempre tiene el mismo significado o la misma interpretación.
+-->
