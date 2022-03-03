@@ -11,18 +11,17 @@
 </head>
 <body>
 
-    <div id="app" class="mt-3">
-       <ul>
-           <label>Arreglo normal</label>
-           <li v-for="(animal, i) in animales" v-bind:key="animal">
-                {{i}} - {{animal}}
-           </li>
-        <br>
-           <label>Arreglo de objetos</label>
-           <li v-for="(persona, i) in personas" v-bind:key="persona.nombre">
-               {{i}} - Mi nombre es: <b>{{persona.nombre}}</b> <b>{{persona.apellido}}</b> tengo <b>{{persona.edad}}</b> años y soy un <b>{{persona.puesto}}</b>
-           </li>
-       </ul>
+    <div id="app" class="m-3">
+        <!--Con la directiva v-on, nosotros especificamos que ante determinado 
+        evento (en esta caso el clik, ejecuta dicho metodo (en este caso Mostrar_Precios))-->
+        <h1 class="titulo" v-on:click="Mostrar_Precios">ver información {{mostrar_elementos==true ? '🙉' : '🙈'}}</h1>
+        <div v-if="mostrar_elementos">   
+            <ul>
+                <li v-for="(persona, i) in personas" v-bind:key="persona.nombre">
+                    Mi nombre es: <b>{{persona.nombre}}</b> <b>{{persona.apellido}}</b> tengo <b>{{persona.edad}}</b> años y soy un <b>{{persona.puesto}}</b>
+                </li>
+            </ul>        
+        </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
