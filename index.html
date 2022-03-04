@@ -12,13 +12,14 @@
 <body>
 
     <div id="app" class="m-3">
-        <!--Con la directiva v-on, nosotros especificamos que ante determinado 
-        evento (en esta caso el clik, ejecuta dicho metodo (en este caso Mostrar_Precios))-->
+        <!--Cuando usamos v-bin class con objetos nosotros determinamos que una clase va a ser aplicada en base a una condicion-->
         <h1 class="titulo" v-on:click="Mostrar_Precios">ver información {{mostrar_elementos==true ? '🙉' : '🙈'}}</h1>
         <div v-if="mostrar_elementos">   
             <ul>
-                <li v-for="(persona, i) in personas" v-bind:key="persona.nombre">
-                    Mi nombre es: <b>{{persona.nombre}}</b> <b>{{persona.apellido}}</b> tengo <b>{{persona.edad}}</b> años y soy un <b>{{persona.puesto}}</b>
+                <li    
+                    v-for="(persona, i) in personas" v-bind:key="persona.nombre"
+                    v-bind:class="{ adulto, bold:  persona.edad >= 30, mayor_edad: persona.edad >= 18 && persona.edad < 30, menor_edad: persona.edad < 18 }" >
+                        Mi nombre es: <b>{{persona.nombre}}</b> <b>{{persona.apellido}}</b> tengo <b>{{persona.edad}}</b> años y soy un <b>{{persona.puesto}}</b>
                 </li>
             </ul>        
         </div>

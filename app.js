@@ -6,10 +6,13 @@ new Vue({
             animales: ['burro', 'caballo', 'perro', 'gato', 'raton'],
             personas: [
                 {nombre: "Genaro", apellido: "perez", edad: 21, puesto: "residente"},
-                {nombre: "Jesus", apellido: "perez", edad: 15, puesto: "alumno"},
+                {nombre: "Maricela", apellido: "Jimenez", edad: 12, puesto: "alumno"},
+                {nombre: "Jesus", apellido: "perez", edad: 30, puesto: "alumno"},
+                {nombre: "Juan", apellido: "Pistolas", edad: 14, puesto: "comerciante"},
                 {nombre: "Oliver", apellido: "camargo", edad: 21, puesto: "alumno"},
-                {nombre: "Mahetsi", apellido: "perez", edad: 21, puesto: "alumno"},
+                {nombre: "Mahetsi", apellido: "Perez", edad: 21, puesto: "alumno"},
                 {nombre: "Efrain", apellido: "Rosas", edad: 46, puesto: "comerciante"},
+                {nombre: "Sergio", apellido: "Vega", edad: 12, puesto: "alumno"},
             ],
             mostrar_elementos: false,
         }

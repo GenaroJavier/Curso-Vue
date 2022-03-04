@@ -5,3 +5,19 @@ img {
 .titulo:hover {
     cursor: pointer;
 }
+
+.mayor_edad {
+    color: cornflowerblue;
+}
+
+.menor_edad {
+    color: crimson;
+}
+
+.adulto {
+    color: darkblue;
+}
+
+.bold {
+    font-weight: 800;
+}
