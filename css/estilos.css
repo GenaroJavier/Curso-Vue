@@ -1,7 +1,9 @@
 img {
     width: 100%;
 }
-
+.titulo {
+    display: inline-block;
+}
 .titulo:hover {
     cursor: pointer;
 }
@@ -15,9 +17,5 @@ img {
 }
 
 .adulto {
-    color: darkblue;
-}
-
-.bold {
-    font-weight: 800;
+    color: white;
 }

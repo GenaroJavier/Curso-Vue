@@ -15,6 +15,7 @@ new Vue({
                 {nombre: "Sergio", apellido: "Vega", edad: 12, puesto: "alumno"},
             ],
             mostrar_elementos: false,
+            color: 'f4f4f4',
         }
     },
     methods: {
@@ -27,7 +28,8 @@ new Vue({
          * el div contenedor.
          */
         Mostrar_Precios () {
-            this.mostrar_elementos = !this.mostrar_elementos; 
+            this.mostrar_elementos = !this.mostrar_elementos;
+            this.color = this.color.split('').reverse().join(''); 
         }
     }
 })
