@@ -3,7 +3,8 @@ new Vue({
 
     data () {
         return {
-            animales: ['burro', 'caballo', 'perro', 'gato', 'raton'],
+            ocupaciones: 'Ocupaciones',
+            lugar: 'Col. Morelos',
             personas: [
                 {nombre: "Genaro", apellido: "perez", edad: 21, puesto: "residente"},
                 {nombre: "Maricela", apellido: "Jimenez", edad: 12, puesto: "alumno"},
@@ -18,18 +19,24 @@ new Vue({
             color: 'f4f4f4',
         }
     },
+    computed: {
+        titulo () {
+            return `${this.ocupaciones} - ${this.lugar} ${this.mostrar_elementos==true ? '🙉' : '🙈'}`; 
+        }, 
+    },
     methods: {
-        /**
-         * Es curioso como funciona este metodo, por que en un inicio especificamos 
-         * la variable encargada de mostrar y ocultar un elemento, 
-         * por ello la inicalizamos en false, para que este metodo me cambie por completo
-         * dicho valor, es decir cada vez que el evento click se dispare, se ejecuta
-         * el metodo y la variable cambie su valor lo que nos permite ocultar y mostrar
-         * el div contenedor.
-         */
         Mostrar_Precios () {
             this.mostrar_elementos = !this.mostrar_elementos;
             this.color = this.color.split('').reverse().join(''); 
+        },
+        Mensaje_persona (nombre, apellido, edad, puesto) {
+            return ("Mi nombre es: " + nombre + " " + apellido + " tengo " + edad + " años y soy un " + puesto);
+        },
+    }, 
+    watch: {
+        //EL nombre de la función tiene que corresponder con el nombre de la data en cuestion. 
+        mostrar_elementos (newVal, oldVal) {
+            console.log(newVal, oldVal); 
         }
-    }
+    },
 })

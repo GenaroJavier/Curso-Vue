@@ -11,17 +11,17 @@
 </head>
 <body>
 
-    <div id="app" class="m-3">
+    <div id="app" class="m-3" v-bind:style="{background: '#' + color}">
         <!--Cuando usamos v-bin class con objetos nosotros determinamos que una clase va a ser aplicada en base a una condicion-->
-        <h1 class="titulo" v-on:click="Mostrar_Precios">ver información {{mostrar_elementos==true ? '🙉' : '🙈'}}</h1>
-        <div v-if="mostrar_elementos" v-bind:style="{background: '#' + color}">   
+        <h1 class="titulo" v-on:click="Mostrar_Precios">{{titulo}}</h1>
+        <div v-if="mostrar_elementos">   
             <ul>
-                <li    
+                <li
                     v-for="(persona, i) in personas" v-bind:key="persona.nombre"
                     v-bind:class="{ adulto:  persona.edad >= 30, mayor_edad: persona.edad > 18 && persona.edad < 30, menor_edad: persona.edad < 18 }" >
-                        Mi nombre es: <b>{{persona.nombre}}</b> <b>{{persona.apellido}}</b> tengo <b>{{persona.edad}}</b> años y soy un <b>{{persona.puesto}}</b>
+                        {{Mensaje_persona (persona.nombre, persona.apellido, persona.edad, persona.puesto)}}
                 </li>
-            </ul>        
+            </ul>    
         </div>
     </div>
     
@@ -32,11 +32,6 @@
 
 
 <!--
-    La propiedad 
-    
-        v-bind:key="variable"
-
-        Nos permite identificar unívoca a cada uno de estos elementos. 
-
-        unívoca: Que siempre tiene el mismo significado o la misma interpretación.
+    Las expresiones en el template son muy convenientes, pero están diseñadas para operaciones simples. 
+    Poner demasiada lógica en sus templates puede hacerlos grandes, complejos y difíciles de mantener
 -->
